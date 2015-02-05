@@ -393,6 +393,7 @@ module.exports = function ($parse) {
 
         scope.$watch(attributes.ngModel, function (number) {
           ngModelController.$setViewValue(card.formattedParse(number));
+          ngModelController.$render();
           ngModelController.$ccType = ccNumberController.type = card.type(number);
         });
 
