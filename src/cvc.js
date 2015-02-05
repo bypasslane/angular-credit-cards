@@ -1,6 +1,6 @@
 'use strict';
 
-var cvc = require('creditcards').cvc;
+var cvc = require('bp-creditcards').cvc;
 
 module.exports = function ($parse) {
   return {

@@ -1,6 +1,6 @@
 'use strict';
 
-var card = require('creditcards').card;
+var card = require('bp-creditcards').card;
 
 module.exports = function ($parse) {
   return {
@@ -20,6 +20,7 @@ module.exports = function ($parse) {
         var ccNumberController = controllers[1];
 
         scope.$watch(attributes.ngModel, function (number) {
+          ngModelController.$setViewValue(card.formattedParse(number));
           ngModelController.$ccType = ccNumberController.type = card.type(number);
         });
 
@@ -31,12 +32,15 @@ module.exports = function ($parse) {
         ngModelController.$parsers.unshift(function (number) {
           return card.parse(number);
         });
-        ngModelController.$validators.ccNumber = function (number) {
-          return card.isValid(number);
-        };
-        ngModelController.$validators.ccNumberType = function (number) {
-          return card.isValid(number, $parse(attributes.ccType)(scope));
-        };
+
+        if(!attributes.skipLuhnValidation) {
+          ngModelController.$validators.ccNumber = function (number) {
+            return card.isValid(number);
+          };
+          ngModelController.$validators.ccNumberType = function (number) {
+            return card.isValid(number, $parse(attributes.ccType)(scope));
+          };
+        }
       };
     }
   };

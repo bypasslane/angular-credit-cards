@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "homepage": "https://github.com/bendrucker/angular-credit-cards",
   "authors": [
-    "Ben Drucker <bvdrucker@gmail.com>"
+    "Ben Drucker <bvdrucker@gmail.com>",
+    "Ben Bean <bbean86@gmail.com>"
   ],
   "description": "Angular directives for formatting and validating credit card inputs",
   "main": "./src/index.js",

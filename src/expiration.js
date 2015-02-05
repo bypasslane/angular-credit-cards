@@ -1,6 +1,6 @@
 'use strict';
 
-var expiration = require('creditcards').expiration;
+var expiration = require('bp-creditcards').expiration;
 var angular    = require('angular');
 
 module.exports = function () {

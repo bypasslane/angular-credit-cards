@@ -55,7 +55,7 @@ describe('cc-number', function () {
     scope.cardType = 'American Express';
     controller.$setViewValue('4242 4242 4242 4242');
     scope.$digest();
-    expect(controller.$error.ccNumber).to.not.be.ok;
+    expect(controller.$error.ccNumber).to.be.true;
     expect(controller.$error.ccNumberType).to.be.true;
   });
 
