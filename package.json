@@ -20,7 +20,10 @@
     "directive",
     "form"
   ],
-  "contributors": ["Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)", "Ben Bean <bbean86@gmail.com>"],
+  "contributors": [
+    "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+    "Ben Bean <bbean86@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bbean86/angular-credit-cards/issues"
@@ -59,5 +62,9 @@
   },
   "browserify-shim": {
     "angular": "global:angular"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "author": "Ben Bean <bbean86@gmail.com>"
 }
